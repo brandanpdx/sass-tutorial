@@ -1,3 +1,7 @@
+.footer h3 {
+  font-style: italic;
+  border: 3px solid blue; }
+
 .nav {
   background-color: #004d66; }
   .nav ul li {
@@ -9,7 +13,7 @@
     .nav a:hover {
       color: royalblue; }
 
-.heading, h1, .footer h3 {
+h1, .footer h3 {
   color: orange;
   font-size: 40px;
   background-color: gray;
@@ -17,9 +21,3 @@
 
 h1:hover, .footer h3:hover {
   background-color: green; }
-
-.banner p {
-  font-size: 40px; }
-
-.footer {
-  font-size: 60px; }
