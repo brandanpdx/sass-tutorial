@@ -7,7 +7,7 @@ $font-md: 30px;
 $font-sm: 20px;
 
 .nav {
-  background-color: $color-primary;
+  background-color: mix(blue, green, 40%,);
 
   ul li {
     list-style: none;
@@ -24,26 +24,34 @@ $font-sm: 20px;
   }
 }
 
-@mixin headingStyles($fontSize: 50px) {
-  font-size: $fontSize;
-  color: $color-secondary;
+.heading {
+  color: $color-primary;
+  font-size: $font-lg;
+  background-color: $color-secondary;
   text-align: center;
 }
 
-@mixin transition($param...) {
-  transition: $param;
+@function fontDoubler($size: 25px) {
+  @return $size * 2;
 }
 
-.banner h1 {
-  @include headingStyles($font-lg)
+
+h1 {
+  @extend .heading;
+
+  &:hover {
+    background-color: green;
+  }
 }
 
 .footer h3 {
-  @include headingStyles;
-  @include transition(color .5s, background-color 1s);
+  @extend h1
+}
 
-  &:hover {
-    color: $color-tertiary;
-    background-color: $color-primary;
-  }
+.banner p {
+  font-size: fontDoubler($font-sm);
+}
+
+.footer {
+  font-size: fontDoubler(30px);
 }
